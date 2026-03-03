@@ -41,10 +41,6 @@
   will-change: opacity, transform;
 }
 
-.feature-card:nth-child(1) { }
-.feature-card:nth-child(2) { }
-.feature-card:nth-child(3) { }
-
 .feature-card.in-view {
   animation: slideUpFade 700ms var(--transition-ease-out) forwards;
 }
