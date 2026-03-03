@@ -1,0 +1,76 @@
+/* ===== LIQUID GLASS BUTTON STYLES ===== */
+
+.btn--glass {
+  padding: 0.6rem 1.25rem;
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform var(--transition-spring), box-shadow var(--transition-ease-out), border-color var(--transition-subtle), color var(--transition-subtle), backdrop-filter var(--transition-subtle);
+  font-size: 0.9rem;
+  font-family: inherit;
+  outline: none;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid transparent;
+  color: var(--color-text-primary);
+  backdrop-filter: blur(8px) saturate(120%);
+  -webkit-backdrop-filter: blur(8px) saturate(120%);
+  box-shadow: 0 6px 18px rgba(106, 108, 113, 0.435), inset 0 6px 10px rgba(255, 255, 255, 0.02), inset 0 -6px 12px rgba(0, 0, 0, 0.45);
+  position: relative;
+  z-index: 1;
+  will-change: transform, box-shadow, border-color;
+  backface-visibility: hidden;
+  transform: translateZ(0);
+  contain: paint;
+}
+
+.btn--glass:hover {
+  transform: translateY(-6px) scale(1.025);
+  box-shadow: 0 20px 60px rgba(106, 108, 113, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  border-color: rgba(111, 117, 119, 0.6);
+  backdrop-filter: blur(12px) saturate(140%);
+  -webkit-backdrop-filter: blur(12px) saturate(140%);
+  color: white;
+}
+
+/* Transparent gray rim for buttons */
+.btn--glass::before {
+  content: '';
+  position: absolute;
+  inset: -6px;
+  border-radius: inherit;
+  z-index: -2;
+  pointer-events: none;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.012), rgba(255, 255, 255, 0.002));
+  border: 1px solid rgba(120, 120, 120, 0.12);
+  filter: blur(6px);
+  opacity: 0.98;
+  will-change: opacity, transform, filter;
+  transition: opacity var(--transition-subtle), filter var(--transition-subtle);
+  box-shadow: 0 6px 18px rgba(106, 108, 113, 0.35), 0 0 0 4px rgba(80, 80, 80, 0.02) inset;
+}
+
+.btn--glass:hover::before {
+  opacity: 1;
+  filter: blur(8px);
+}
+
+/* Subtle colored bloom behind the button on hover */
+.btn--glass::after {
+  content: '';
+  position: absolute;
+  inset: -5px;
+  border-radius: inherit;
+  filter: blur(12px);
+  background: radial-gradient(circle at 20% 20%, rgba(141, 134, 134, 0.06), transparent 30%), radial-gradient(circle at 80% 80%, rgba(90, 90, 90, 0.03), transparent 0%);
+  z-index: -1;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--transition-ease-out), transform var(--transition-spring), filter var(--transition-subtle);
+  will-change: opacity, transform, filter;
+}
+
+.btn--glass:hover::after {
+  opacity: 1;
+  transform: scale(1.02);
+  filter: blur(16px);
+}

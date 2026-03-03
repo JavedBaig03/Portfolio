@@ -1,0 +1,19 @@
+/* ===== APP STYLES - MODULAR IMPORTS ===== */
+
+/* Design Tokens */
+@import './styles/variables.css';
+
+/* Global Styles */
+@import './styles/globals.css';
+
+/* Component Styles */
+@import './components/ButtonGlass.css';
+@import './components/Navbar.css';
+@import './components/Hero.css';
+@import './components/Skills.css';
+@import './components/TechStack.css';
+@import './components/Contact.css';
+@import './components/Footer.css';
+
+/* Utilities & Animations */
+@import './styles/utilities.css';

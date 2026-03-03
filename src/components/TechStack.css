@@ -1,0 +1,182 @@
+/* ===== TECH STACK SECTION ===== */
+
+.techstack-wrapper {
+  overflow: hidden;
+}
+
+.techstack-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.4;
+}
+
+.techstack {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  margin-bottom: var(--space-8);
+}
+
+.techstack__title {
+  margin-bottom: var(--space-2);
+}
+
+.techstack__subtitle {
+  font-size: 1.1rem;
+  color: var(--color-text-secondary);
+  max-width: 500px;
+  margin: 0 auto var(--space-8);
+}
+
+.techstack__logoloop {
+  position: relative;
+  overflow: hidden;
+  margin-bottom: var(--space-6);
+  color: var(--color-text-tertiary);
+}
+
+.techstack__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: var(--space-4);
+}
+
+/* Glass card for each category */
+.techstack__card {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-5) var(--space-4);
+  position: relative;
+  text-align: left;
+  backdrop-filter: blur(8px) saturate(120%);
+  -webkit-backdrop-filter: blur(8px) saturate(120%);
+  box-shadow: var(--shadow-soft);
+  transition: transform var(--transition-spring), box-shadow var(--transition-ease-out), border-color var(--transition-subtle);
+  will-change: transform, box-shadow, border-color;
+  overflow: hidden;
+}
+
+/* Transparent gray rim */
+.techstack__card::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  z-index: -1;
+  pointer-events: none;
+  border: 1px solid rgba(120, 120, 120, 0.1);
+  filter: blur(4px);
+  opacity: 0.9;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.008), rgba(255, 255, 255, 0.002));
+  transition: opacity var(--transition-subtle), filter var(--transition-subtle);
+  will-change: opacity, filter;
+}
+
+.techstack__card:hover {
+  transform: translateY(-10px) scale(1.015);
+  border-color: rgba(111, 117, 119, 0.5);
+  box-shadow: 0 24px 50px rgba(106, 108, 113, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.03);
+}
+
+.techstack__card:hover::before {
+  opacity: 1;
+  filter: blur(6px);
+}
+
+/* Category header */
+.techstack__card-header {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin-bottom: var(--space-3);
+}
+
+.techstack__card-icon {
+  font-size: 1.5rem;
+  width: 42px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-sm);
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(120, 120, 120, 0.08);
+  flex-shrink: 0;
+}
+
+.techstack__card-label {
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-text-tertiary);
+}
+
+/* Tech items inside each card */
+.techstack__items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.techstack__item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--color-text-primary);
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(120, 120, 120, 0.1);
+  transition: transform var(--transition-spring), background var(--transition-subtle), border-color var(--transition-subtle), box-shadow var(--transition-subtle);
+  cursor: default;
+}
+
+.techstack__item:hover {
+  transform: translateY(-3px);
+  background: rgba(255, 255, 255, 0.07);
+  border-color: rgba(111, 117, 119, 0.4);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.techstack__item-icon {
+  font-size: 1rem;
+  line-height: 1;
+}
+
+/* Scroll reveal for tech cards */
+.techstack__card {
+  opacity: 0;
+  transform: translateY(40px);
+  will-change: opacity, transform;
+}
+
+.techstack__card.in-view {
+  animation: slideUpFade 700ms var(--transition-ease-out) forwards;
+}
+
+.techstack__card:nth-child(1).in-view { animation-delay: 0ms; }
+.techstack__card:nth-child(2).in-view { animation-delay: 120ms; }
+.techstack__card:nth-child(3).in-view { animation-delay: 240ms; }
+.techstack__card:nth-child(4).in-view { animation-delay: 360ms; }
+.techstack__card:nth-child(5).in-view { animation-delay: 480ms; }
+
+@media (max-width: 768px) {
+  .techstack__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .techstack__items {
+    gap: 8px;
+  }
+
+  .techstack__item {
+    font-size: 0.8rem;
+    padding: 5px 12px;
+  }
+}

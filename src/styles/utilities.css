@@ -1,0 +1,54 @@
+/* ===== ANIMATIONS & UTILITIES ===== */
+
+/* Scroll Reveal Animation */
+@keyframes slideUpFade {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Scroll Reveal Classes */
+.scroll-reveal {
+  animation: slideUpFade 700ms var(--transition-ease-out) forwards;
+  opacity: 0;
+}
+
+.scroll-reveal.in-view {
+  opacity: 1;
+  animation-play-state: running;
+}
+
+/* What I Do section reveal */
+.whatido {
+  opacity: 0;
+  transform: translateY(40px);
+  will-change: opacity, transform;
+}
+
+.whatido.in-view {
+  animation: slideUpFade 700ms var(--transition-ease-out) forwards;
+}
+
+/* Stagger animations for feature cards */
+.feature-card {
+  opacity: 0;
+  transform: translateY(40px);
+  will-change: opacity, transform;
+}
+
+.feature-card:nth-child(1) { }
+.feature-card:nth-child(2) { }
+.feature-card:nth-child(3) { }
+
+.feature-card.in-view {
+  animation: slideUpFade 700ms var(--transition-ease-out) forwards;
+}
+
+.feature-card:nth-child(1).in-view { animation-delay: 0ms; }
+.feature-card:nth-child(2).in-view { animation-delay: 150ms; }
+.feature-card:nth-child(3).in-view { animation-delay: 300ms; }
