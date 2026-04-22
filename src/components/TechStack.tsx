@@ -7,7 +7,7 @@ import {
   SiDocker, SiGit, SiJenkins, SiApachetomcat, SiGithubactions, SiSpringboot
 } from 'react-icons/si'
 import { TbBrandCSharp } from 'react-icons/tb'
-import { HiCode, HiServer, HiDatabase, HiLink, HiCube, HiCloudUpload } from 'react-icons/hi'
+import { HiCode, HiServer, HiDatabase, HiLink, HiCloudUpload } from 'react-icons/hi'
 
 const techLogos = [
   { node: <SiReact />, title: "React" },

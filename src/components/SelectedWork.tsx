@@ -1,5 +1,4 @@
 import { projects } from '../data/profile'
-import { HiExternalLink } from 'react-icons/hi'
 
 const SelectedWork = () => {
   return (
