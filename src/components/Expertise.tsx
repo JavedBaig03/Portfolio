@@ -15,9 +15,9 @@ const Expertise = () => {
           <div className="features__grid">
             <div className="feature-card">
               <div className="feature-card__icon"><HiCode /></div>
-              <h3 className="feature-card__title">Modern Web Interfaces</h3>
+              <h3 className="feature-card__title">Frontend Development (React-Based)</h3>
               <p className="feature-card__description">
-                Building responsive, interactive web applications with a strong focus on usability, performance, and clean UI design.
+                Built responsive UI with optimized performance and clean UX
               </p>
               <div className="feature-card__tags">
                 <span className="feature-card__tag">React</span>
@@ -31,7 +31,7 @@ const Expertise = () => {
               <div className="feature-card__icon"><HiCube /></div>
               <h3 className="feature-card__title">Interactive 3D Experiences</h3>
               <p className="feature-card__description">
-                Creating immersive 3D environments and interactive experiences using Unity and Blender, combining logic with creativity.
+                Developed immersive environments with physics and lighting systems
               </p>
               <div className="feature-card__tags">
                 <span className="feature-card__tag">Unity</span>
@@ -44,9 +44,9 @@ const Expertise = () => {
 
             <div className="feature-card">
               <div className="feature-card__icon"><HiServer /></div>
-              <h3 className="feature-card__title">Backend & Core Foundations</h3>
+              <h3 className="feature-card__title">Backend Development & APIs</h3>
               <p className="feature-card__description">
-                Exploring backend development and strengthening my fundamentals in data structures, APIs, and system logic step by step.
+                Designed REST APIs with authentication and efficient DB queries
               </p>
               <div className="feature-card__tags">
                 <span className="feature-card__tag">Node.js</span>

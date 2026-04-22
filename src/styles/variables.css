@@ -1,20 +1,20 @@
 /* ===== DESIGN TOKENS & VARIABLES ===== */
 :root {
-  /* Colors - Dark Theme */
-  --color-bg-primary: #030712;
-  --color-bg-secondary: rgba(15, 23, 42, 0.72);
-  --color-bg-tertiary: rgba(17, 24, 39, 0.85);
+  /* Colors - Light Theme */
+  --color-bg-primary: #ffffff;
+  --color-bg-secondary: #f8fafc;
+  --color-bg-tertiary: #f1f5f9;
   
-  --color-text-primary: #f8fafc;
-  --color-text-secondary: #cbd5e1;
-  --color-text-tertiary: #94a3b8;
+  --color-text-primary: #000000;
+  --color-text-secondary: #334155;
+  --color-text-tertiary: #64748b;
   
-  --color-border: rgba(148, 163, 184, 0.22);
-  --color-accent: #6f7577;
-  --color-accent-bright: #8c9295;
+  --color-border: rgba(0, 0, 0, 0.08);
+  --color-accent: #0f172a;
+  --color-accent-bright: #334155;
   
-  --color-glass: rgba(2, 6, 23, 0.62);
-  --color-glass-dark: rgba(148, 163, 184, 0.08);
+  --color-glass: rgba(255, 255, 255, 0.85);
+  --color-glass-dark: rgba(0, 0, 0, 0.04);
   
   /* Semantic colors */
   --color-red: #f87171;

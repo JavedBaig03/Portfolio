@@ -46,10 +46,6 @@ body {
   inset: 0;
   z-index: -1;
   pointer-events: none;
-  background:
-    radial-gradient(900px circle at 15% 10%, rgba(14, 165, 233, 0.16) 0%, transparent 55%),
-    radial-gradient(900px circle at 80% 80%, rgba(16, 185, 129, 0.14) 0%, transparent 55%),
-    linear-gradient(160deg, rgba(2, 6, 23, 0.92) 0%, rgba(2, 6, 23, 0.78) 100%);
 }
 
 .page__content {
@@ -164,7 +160,7 @@ section:last-child {
 }
 
 .project-card {
-  background: var(--color-bg-secondary);
+  background: var(--color-bg-primary);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-md);
   padding: var(--space-5);
@@ -174,25 +170,17 @@ section:last-child {
   transition: transform var(--transition-spring), box-shadow var(--transition-ease-out), border-color var(--transition-subtle);
   will-change: transform, box-shadow;
   position: relative;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
 }
 
 .project-card::before {
-  content: '';
-  position: absolute;
-  inset: -1px;
-  border-radius: inherit;
-  z-index: -1;
-  pointer-events: none;
-  border: 1px solid rgba(120, 120, 120, 0.1);
-  filter: blur(4px);
-  opacity: 0.9;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.008), rgba(255, 255, 255, 0.002));
+  content: none;
 }
 
 .project-card:hover {
   transform: translateY(-6px);
-  border-color: rgba(111, 117, 119, 0.5);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+  border-color: var(--color-border);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.06);
 }
 
 .project-card__header {
@@ -237,11 +225,11 @@ section:last-child {
 .project-card__tag {
   font-size: 0.78rem;
   padding: 0.3rem 0.7rem;
-  background: rgba(168, 85, 247, 0.12);
-  color: rgba(200, 160, 255, 0.9);
+  background: var(--color-bg-tertiary);
+  color: var(--color-text-secondary);
   border-radius: 50px;
-  border: 1px solid rgba(168, 85, 247, 0.2);
-  font-weight: 500;
+  border: 1px solid var(--color-border);
+  font-weight: 600;
 }
 
 @media (max-width: 768px) {

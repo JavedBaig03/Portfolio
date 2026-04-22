@@ -9,16 +9,21 @@ const Hero = ({ contentRef }: HeroProps) => {
     <div className="hero">
       <div className="container">
         <div className="hero__content hero__content--spaced" ref={contentRef}>
-          <h3 className='hero__greetings'>Greetings, I'm Javed Ahmed Baig —</h3>
+          <h3 className='hero__greetings'>Full Stack Developer | React • Spring Boot • 3D Experiences</h3>
           <h1 className="hero__title">Engineering Scalable Digital Products</h1>
           <p className="hero__description">
-            Full-stack engineer building systems that scale. From React frontends to Spring Boot
-            backends, every line of code is crafted for performance, clarity, and user delight.
+            B.Tech CSE student with hands-on experience in building full-stack apps and interactive 3D systems using React, Spring Boot, and Unity.
           </p>
-          <a href="#work" className="hero__cta btn--glass">
-            <span>View My Work</span>
-            <span>→</span>
-          </a>
+          <div className="hero__actions">
+            <a href="#work" className="hero__cta btn--glass">
+              <span>View My Work</span>
+              <span>→</span>
+            </a>
+            <a href="/resume.pdf" download className="hero__cta btn--glass" style={{ background: 'transparent', color: 'var(--color-text-primary)' }}>
+              <span>Download Resume</span>
+              <span>📄</span>
+            </a>
+          </div>
         </div>
       </div>
     </div>

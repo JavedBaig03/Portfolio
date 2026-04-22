@@ -4,14 +4,12 @@ const WhatIDo = () => {
       <div className="whatido">
         <h2 className="section-title">What I Do</h2>
         <div>
-          <p className="section-subtitle">
-I enjoy building modern web interfaces with a strong focus on user experience and clean design. I create responsive and interactive interfaces with careful attention to detail.<br /><br />
-
-Alongside that, I am exploring backend development and strengthening my understanding of data structures step by step.<br />
-
-I also work with Unity and Blender to create interactive 3D experiences.<br /><br />
-
-I’m always learning, always building, and constantly pushing myself to improve with every project.          </p>
+          <ul className="section-subtitle" style={{ listStyleType: 'disc', paddingLeft: '20px', lineHeight: '2' }}>
+            <li>Build responsive web applications using React and modern UI practices</li>
+            <li>Develop backend systems using Spring Boot and REST APIs</li>
+            <li>Create interactive 3D experiences using Unity and Blender</li>
+            <li>Continuously improving problem-solving and DSA skills</li>
+          </ul>
         </div>
       </div>
     </div>

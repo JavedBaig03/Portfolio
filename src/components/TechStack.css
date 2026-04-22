@@ -45,15 +45,13 @@
 
 /* Glass card for each category */
 .techstack__card {
-  background: rgba(255, 255, 255, 0.02);
+  background: var(--color-bg-primary);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-md);
   padding: var(--space-5) var(--space-4);
   position: relative;
   text-align: left;
-  backdrop-filter: blur(8px) saturate(120%);
-  -webkit-backdrop-filter: blur(8px) saturate(120%);
-  box-shadow: var(--shadow-soft);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
   transition: transform var(--transition-spring), box-shadow var(--transition-ease-out), border-color var(--transition-subtle);
   will-change: transform, box-shadow, border-color;
   overflow: hidden;
@@ -61,29 +59,17 @@
 
 /* Transparent gray rim */
 .techstack__card::before {
-  content: '';
-  position: absolute;
-  inset: -1px;
-  border-radius: inherit;
-  z-index: -1;
-  pointer-events: none;
-  border: 1px solid rgba(120, 120, 120, 0.1);
-  filter: blur(4px);
-  opacity: 0.9;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.008), rgba(255, 255, 255, 0.002));
-  transition: opacity var(--transition-subtle), filter var(--transition-subtle);
-  will-change: opacity, filter;
+  content: none;
 }
 
 .techstack__card:hover {
-  transform: translateY(-10px) scale(1.015);
-  border-color: rgba(111, 117, 119, 0.5);
-  box-shadow: 0 24px 50px rgba(106, 108, 113, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.03);
+  transform: translateY(-6px);
+  border-color: var(--color-border);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.06);
 }
 
 .techstack__card:hover::before {
   opacity: 1;
-  filter: blur(6px);
 }
 
 /* Category header */
@@ -130,18 +116,18 @@
   border-radius: 999px;
   font-size: 0.85rem;
   font-weight: 500;
-  color: var(--color-text-primary);
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(120, 120, 120, 0.1);
+  color: var(--color-text-secondary);
+  background: var(--color-bg-tertiary);
+  border: 1px solid var(--color-border);
   transition: transform var(--transition-spring), background var(--transition-subtle), border-color var(--transition-subtle), box-shadow var(--transition-subtle);
   cursor: default;
 }
 
 .techstack__item:hover {
-  transform: translateY(-3px);
-  background: rgba(255, 255, 255, 0.07);
-  border-color: rgba(111, 117, 119, 0.4);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+  transform: translateY(-2px);
+  background: var(--color-bg-secondary);
+  border-color: var(--color-text-tertiary);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
 
 .techstack__item-icon {

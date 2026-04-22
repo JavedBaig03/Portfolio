@@ -8,9 +8,9 @@ const Contact = () => {
   return (
     <div className="contact">
       <h2 className="contact__heading">GET IN TOUCH</h2>
-      <p className="contact__description">
-        Whether you need a full-stack web application, 3D interactive experience, or system architecture
-        consultation—let's build something remarkable.
+      <p className="contact__description" style={{ fontWeight: 500, fontSize: '1.2rem', color: 'var(--color-text-primary)' }}>
+        Open to internships and full-time opportunities. <br/>
+        <span style={{ color: 'var(--color-text-secondary)', fontSize: '1.05rem', fontWeight: 400 }}>Let's connect and build something impactful.</span>
       </p>
 
       {state.succeeded ? (

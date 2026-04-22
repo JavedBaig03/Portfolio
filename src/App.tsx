@@ -1,5 +1,5 @@
 import './App.css'
-import ColorBends from './components/ColorBends'
+import ParticleBackground from './components/ParticleBackground'
 import NavBar from './components/NavBar'
 import Hero from './components/Hero'
 import WhatIDo from './components/WhatIDo'
@@ -9,6 +9,8 @@ import SelectedWork from './components/SelectedWork'
 import Contact from './components/Contact'
 import Gallery from './components/Gallery'
 import Footer from './components/Footer'
+import Achievements from './components/Achievements'
+import Experience from './components/Experience'
 import { useEffect, useRef } from 'react'
 
 const App = () => {
@@ -68,20 +70,7 @@ const App = () => {
           {/* ===== HERO WRAPPER: Navbar + Hero ===== */}
           <div className="hero-wrapper" ref={heroWrapperRef}>
             <div className="hero__bg" aria-hidden="true">
-              <ColorBends
-                className="hero__bg"
-                colors={["#707070", "#707070", "#707070"]}
-                rotation={13}
-                speed={0.24}
-                scale={1}
-                frequency={1}
-                warpStrength={1}
-                mouseInfluence={1}
-                parallax={0.5}
-                noise={0.01}
-                transparent
-                autoRotate={-5}
-              />
+              <ParticleBackground className="hero__bg" />
             </div>
 
             <NavBar />
@@ -99,6 +88,14 @@ const App = () => {
 
             <section id="expertise">
               <Expertise />
+            </section>
+
+            <section id="experience">
+              <Experience />
+            </section>
+
+            <section id="achievements">
+              <Achievements />
             </section>
 
             <section id="work">

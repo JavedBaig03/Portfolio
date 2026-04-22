@@ -261,9 +261,13 @@ const Masonry = ({
                     background: 'linear-gradient(45deg, rgba(255,0,150,0.5), rgba(0,150,255,0.5))',
                     opacity: 0,
                     pointerEvents: 'none',
-                    borderRadius: '8px'
                   }}
                 />
+              )}
+              {item.caption && (
+                <div className="caption-overlay">
+                  {item.caption}
+                </div>
               )}
             </div>
           </div>

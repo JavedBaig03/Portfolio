@@ -2,8 +2,10 @@ export type Project = {
   id: string
   title: string
   description: string
+  bullets: string[]
   stack: string[]
   link?: string
+  github?: string
 }
 
 export type SkillGroup = {
@@ -36,26 +38,56 @@ export const projects: Project[] = [
   {
     id: 'car-rental',
     title: 'Car Rental Platform',
-    description: 'Full-stack vehicle booking system with authentication, REST APIs, and optimized database queries.',
-    stack: ['React', 'Spring Boot', 'MySQL']
+    description: 'Solves the problem of manual vehicle booking through a centralized digital platform.',
+    bullets: [
+      'Full-stack vehicle booking system with authentication',
+      'Implemented REST APIs using Spring Boot',
+      'Optimized MySQL queries for faster performance',
+      'Built responsive UI using React'
+    ],
+    stack: ['React', 'Spring Boot', 'MySQL'],
+    github: 'https://github.com/JavedBaig03',
+    link: '#'
   },
   {
     id: 'music-player',
     title: 'Online Music Player',
-    description: 'Web-based music player with playlist management, real-time controls, and smooth UI state updates.',
-    stack: ['React']
+    description: 'Addresses seamless, cross-device music playback without heavy resource consumption.',
+    bullets: [
+      'Web-based music player with playlist management',
+      'Real-time controls with seamless track switching',
+      'Smooth UI state updates minimizing re-renders',
+      'Built entirely within the React ecosystem'
+    ],
+    stack: ['React'],
+    github: 'https://github.com/JavedBaig03',
+    link: '#'
   },
   {
     id: 'over-steer',
     title: 'Over Steer',
-    description: '3D driving prototype with custom environments, vehicle physics, and optimized lighting systems.',
-    stack: ['Unity', 'Blender', 'C#']
+    description: 'Aimed at achieving realistic vehicle physics simulation within custom web-ready tracks.',
+    bullets: [
+      '3D driving prototype with custom vehicle physics',
+      'Built environments optimized for fast rendering',
+      'Tuned lighting systems to run smoothly',
+      'Developed core physics logic entirely in C#'
+    ],
+    stack: ['Unity', 'Blender', 'C#'],
+    github: 'https://github.com/JavedBaig03'
   },
   {
     id: 'last-light',
     title: 'The Last Light',
-    description: 'Survival horror prototype with torch-based mechanics and atmosphere-focused world building.',
-    stack: ['Unity', 'Blender', 'C#']
+    description: 'Experimenting with atmosphere-focused world building and light-based gameplay mechanics.',
+    bullets: [
+      'Survival horror prototype with torch-based mechanics',
+      'Implemented visibility logic to guide player interaction',
+      'Built custom procedural scenes and immersive levels',
+      'Applied real-time dynamic lighting via Unity'
+    ],
+    stack: ['Unity', 'Blender', 'C#'],
+    github: 'https://github.com/JavedBaig03'
   }
 ]
 

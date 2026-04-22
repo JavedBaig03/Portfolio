@@ -1,14 +1,14 @@
 import Masonry from './Masonry'
 
 const galleryItems = [
-  { id: 1, img: '/Blender/BedRoom.png', height: 500 },
-  { id: 2, img: '/Blender/Garage.png', height: 450 },
-  { id: 3, img: '/Blender/FreakyCorridor.png', height: 550 },
-  { id: 4, img: '/Blender/Barrel.png', height: 500 },
-  { id: 5, img: '/Blender/pillar.png', height: 600 },
-  { id: 6, img: '/Blender/pillar-3.png', height: 550 },
-  { id: 7, img: '/Blender/pillar-4.png', height: 500 },
-  { id: 8, img: '/Blender/pillars.png', height: 600 },
+  { id: 1, img: '/Blender/BedRoom.png', height: 500, caption: "Interior Lighting Study" },
+  { id: 2, img: '/Blender/Garage.png', height: 450, caption: "Vehicle Asset Showcase" },
+  { id: 3, img: '/Blender/FreakyCorridor.png', height: 550, caption: "Game Environment Prototype" },
+  { id: 4, img: '/Blender/Barrel.png', height: 500, caption: "Props & Material Texture Setup" },
+  { id: 5, img: '/Blender/pillar.png', height: 600, caption: "Architectural Asset" },
+  { id: 6, img: '/Blender/pillar-3.png', height: 550, caption: "Procedural Scene Experiment" },
+  { id: 7, img: '/Blender/pillar-4.png', height: 500, caption: "Lighting Test" },
+  { id: 8, img: '/Blender/pillars.png', height: 600, caption: "Environment Blockout" },
 ]
 
 const Gallery = () => {
