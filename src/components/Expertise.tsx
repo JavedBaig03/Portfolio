@@ -9,29 +9,29 @@ const Expertise = () => {
       </div>
       <div className="container" style={{ position: 'relative', zIndex: 1 }}>
         <div className="features">
-          <h2 className="section-title features__title">What I Focus On</h2>
-          <p className="features__subtitle">Core areas where I deliver impact</p>
+          <h2 className="section-title features__title">Areas of Expertise</h2>
+          <p className="features__subtitle">Core domains where I deliver measurable impact</p>
 
           <div className="features__grid">
             <div className="feature-card">
               <div className="feature-card__icon"><HiCode /></div>
-              <h3 className="feature-card__title">Frontend Development (React-Based)</h3>
+              <h3 className="feature-card__title">Frontend Engineering</h3>
               <p className="feature-card__description">
-                Built responsive UI with optimized performance and clean UX
+                Building responsive, performant interfaces with component-driven architecture and optimized rendering pipelines.
               </p>
               <div className="feature-card__tags">
                 <span className="feature-card__tag">React</span>
                 <span className="feature-card__tag">JavaScript</span>
-                <span className="feature-card__tag">Tailwind</span>
+                <span className="feature-card__tag">Tailwind CSS</span>
                 <span className="feature-card__tag">Responsive Design</span>
               </div>
             </div>
 
             <div className="feature-card">
               <div className="feature-card__icon"><HiCube /></div>
-              <h3 className="feature-card__title">Interactive 3D Experiences</h3>
+              <h3 className="feature-card__title">3D & Interactive Systems</h3>
               <p className="feature-card__description">
-                Developed immersive environments with physics and lighting systems
+                Creating immersive real-time environments with custom physics engines, dynamic lighting, and optimized asset pipelines.
               </p>
               <div className="feature-card__tags">
                 <span className="feature-card__tag">Unity</span>
@@ -44,15 +44,15 @@ const Expertise = () => {
 
             <div className="feature-card">
               <div className="feature-card__icon"><HiServer /></div>
-              <h3 className="feature-card__title">Backend Development & APIs</h3>
+              <h3 className="feature-card__title">Backend & API Development</h3>
               <p className="feature-card__description">
-                Designed REST APIs with authentication and efficient DB queries
+                Architecting RESTful services with secure authentication, efficient database queries, and scalable data models.
               </p>
               <div className="feature-card__tags">
-                <span className="feature-card__tag">Node.js</span>
+                <span className="feature-card__tag">Spring Boot</span>
                 <span className="feature-card__tag">REST APIs</span>
-                <span className="feature-card__tag">DSA</span>
-                <span className="feature-card__tag">Problem Solving</span>
+                <span className="feature-card__tag">Node.js</span>
+                <span className="feature-card__tag">System Design</span>
               </div>
             </div>
           </div>

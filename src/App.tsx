@@ -11,64 +11,14 @@ import Gallery from './components/Gallery'
 import Footer from './components/Footer'
 import Achievements from './components/Achievements'
 import Experience from './components/Experience'
-import { useEffect, useRef } from 'react'
 
 const App = () => {
-  const heroContentRef = useRef<HTMLDivElement>(null)
-  const heroWrapperRef = useRef<HTMLDivElement>(null)
-
-  useEffect(() => {
-    // Hero scroll fade-out + scale-down effect
-    const handleScroll = () => {
-      const scrollY = window.scrollY
-      const heroHeight = heroWrapperRef.current?.offsetHeight || window.innerHeight
-      const progress = Math.min(scrollY / heroHeight, 1)
-
-      if (heroContentRef.current) {
-        const opacity = 1 - progress * 1.5 // fades out by ~66% scroll
-        const scale = 1 - progress * 0.08   // subtle scale from 1 → 0.92
-        heroContentRef.current.style.opacity = `${Math.max(opacity, 0)}`
-        heroContentRef.current.style.transform = `scale(${Math.max(scale, 0.92)}) translateZ(0)`
-      }
-    }
-
-    window.addEventListener('scroll', handleScroll, { passive: true })
-    handleScroll() // init
-
-    // Scroll reveal animation observer
-    const observerOptions = {
-      threshold: 0.15,
-      rootMargin: '0px 0px -50px 0px',
-    }
-
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('in-view')
-        }
-      })
-    }, observerOptions)
-
-    const whatidoSection = document.querySelector('.whatido')
-    const featureCards = document.querySelectorAll('.feature-card')
-    const techCards = document.querySelectorAll('.techstack__card')
-
-    if (whatidoSection) observer.observe(whatidoSection)
-    featureCards.forEach((card) => observer.observe(card))
-    techCards.forEach((card) => observer.observe(card))
-
-    return () => {
-      window.removeEventListener('scroll', handleScroll)
-      observer.disconnect()
-    }
-  }, [])
-
   return (
     <div className="page">
       <div className="page__content">
         <main>
           {/* ===== HERO WRAPPER: Navbar + Hero ===== */}
-          <div className="hero-wrapper" ref={heroWrapperRef}>
+          <div className="hero-wrapper">
             <div className="hero__bg" aria-hidden="true">
               <ParticleBackground className="hero__bg" />
             </div>
@@ -76,7 +26,7 @@ const App = () => {
             <NavBar />
 
             <section id="hero">
-              <Hero contentRef={heroContentRef} />
+              <Hero />
             </section>
           </div>
 

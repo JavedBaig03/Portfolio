@@ -35,18 +35,11 @@ const useMeasure = () => {
   return [ref, size];
 };
 
-const preloadImages = async urls => {
-  await Promise.all(
-    urls.map(
-      src =>
-        new Promise(resolve => {
-          const img = new Image();
-          img.src = src;
-          img.onload = img.onerror = () => resolve();
-        })
-    )
-  );
-};
+// We rely on native lazy-loading for image delivery and let the
+// IntersectionObserver trigger animations when the masonry enters view.
+// This avoids forcing all images to download up-front and works well
+// with CDN + build-time image generation (vite-imagetools) when images
+// are imported as modules.
 
 const Masonry = ({
   items,
@@ -116,8 +109,8 @@ const Masonry = ({
   };
 
   useEffect(() => {
-    preloadImages(items.map(i => i.img)).then(() => setImagesReady(true));
-  }, [items]);
+    if (isVisible) setImagesReady(true);
+  }, [isVisible]);
 
   const grid = useMemo(() => {
     if (!width) return [];
@@ -248,7 +241,14 @@ const Masonry = ({
             onMouseLeave={e => handleMouseLeave(e, item)}
             style={{ cursor: item.url ? 'pointer' : 'default' }}
           >
-            <div className="item-img" style={{ backgroundImage: `url(${item.img})` }}>
+            <div className="item-img">
+              <img
+                src={item.img}
+                alt={item.caption || ''}
+                loading="lazy"
+                decoding="async"
+                style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
+              />
               {colorShiftOnHover && (
                 <div
                   className="color-overlay"

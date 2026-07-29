@@ -1,0 +1,185 @@
+.whatido-page {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: flex-start;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 18% 12%, rgba(155, 92, 129, 0.399), transparent 28%),
+    radial-gradient(circle at 82% 82%, rgba(152, 130, 160, 0.468), transparent 26%),
+    linear-gradient(180deg, #0de39423 0%, #d7dfdb00 100%);
+  padding: clamp(5rem, 10vw, 8rem) 0 clamp(4rem, 8vw, 6rem);
+}
+
+
+
+.whatido-page::before {
+  content: '';
+  position: absolute;
+  inset: auto -10% -15% auto;
+  width: 34rem;
+  height: 34rem;
+  border-radius: 999px;
+  background: radial-gradient(circle, rgba(1, 71, 236, 0.045), transparent 70%);
+  filter: blur(12px);
+  pointer-events: none;
+}
+
+.whatido-page__content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  min-height: auto;
+  padding-top: clamp(1rem, 4vw, 3rem);
+}
+
+.whatido-page__copy {
+  max-width: 52rem;
+}
+
+.whatido-page__focus {
+  width: 100%;
+  max-width: 10ch;
+}
+
+.whatido-page__focus .focus-container {
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 0.08em 0.16em;
+}
+
+.whatido-page__focus .focus-word {
+  font-size: clamp(5rem, 9vw, 9rem);
+  font-weight: 800;
+  line-height: 1.02;
+  letter-spacing: -0.02em;
+  color: var(--color-text-primary);
+}
+
+.whatido-page__focus .focus-frame {
+  z-index: 1;
+}
+
+.whatido-page__eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin: 0 0 0.9rem;
+  font-size: 2rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--color-text-tertiary);
+}
+
+.whatido-page__eyebrow::before {
+  content: '';
+  width: 2.75rem;
+  height: 10px;
+  background: linear-gradient(90deg, rgba(15, 23, 42, 0.2), rgba(15, 23, 42, 0));
+}
+
+.whatido-page__description {
+  max-width: 42rem;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.whatido-page__list {
+  margin: 0;
+  padding: 0 0 0 1.1rem;
+  display: grid;
+  gap: 0.95rem;
+  color: var(--color-text-secondary);
+  line-height: 1.8;
+  font-size: 2rem;
+}
+
+.whatido-page__cta {
+  margin-top: 2rem;
+  background: #0f172a;
+  border-color: #0f172a;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.whatido-page__cta:hover {
+  background: transparent;
+  color: #0f172a;
+}
+
+.whatido__paths {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 1;
+  mix-blend-mode: normal;
+}
+
+.whatido__paths--left {
+  transform: translateY(-2%);
+}
+
+.whatido__paths--right {
+  transform: translateY(2%) scaleX(-1);
+}
+
+.whatido__paths-svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.whatido__path {
+  fill: none;
+  vector-effect: non-scaling-stroke;
+  stroke: rgba(15, 23, 42, var(--path-opacity, 0.12));
+  stroke-width: var(--path-width, 0.7);
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dasharray: 4 9;
+  animation: whatido-path-drift 5s linear infinite;
+  animation-delay: var(--path-delay, 0s);
+}
+
+@keyframes whatido-path-drift {
+  from {
+    stroke-dashoffset: 0;
+  }
+
+  to {
+    stroke-dashoffset: -240;
+  }
+}
+
+@media (max-width: 768px) {
+  .whatido-page {
+    padding: 3rem 0;
+    min-height: auto;
+  }
+
+  .whatido-page__content {
+    min-height: auto;
+  }
+
+  .whatido-page__focus {
+    max-width: 10ch;
+  }
+
+  .whatido-page__focus .focus-word {
+    font-size: clamp(2.6rem, 14vw, 4rem);
+  }
+
+  .whatido-page__list {
+    font-size: 0.98rem;
+  }
+
+  .whatido-page__cta {
+    width: 100%;
+    justify-content: center;
+  }
+}

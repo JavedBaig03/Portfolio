@@ -96,8 +96,8 @@
   text-align: left;
   position: relative;
   will-change: transform, box-shadow, border-color;
-  width: fit-content;
-  align-self: flex-start;
+  display: flex;
+  flex-direction: column;
 }
 
 /* Transparent gray rim for feature cards */
@@ -135,7 +135,8 @@
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
-  margin-top: var(--space-3);
+  margin-top: auto;
+  padding-top: var(--space-3);
 }
 
 .feature-card__tag {

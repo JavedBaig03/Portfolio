@@ -5,12 +5,8 @@
   text-align: center;
   color: var(--color-text-tertiary);
   font-size: 0.9rem;
-  border-top: 1px solid rgba(148, 163, 184, 0.08);
-  background: linear-gradient(
-    to top,
-    rgba(15, 23, 42, 0.6),
-    transparent
-  );
+  border-top: 1px solid var(--color-border);
+  background: var(--color-bg-secondary);
   scroll-snap-align: none;
 }
 .footer p {

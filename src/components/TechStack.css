@@ -135,23 +135,6 @@
   line-height: 1;
 }
 
-/* Scroll reveal for tech cards */
-.techstack__card {
-  opacity: 0;
-  transform: translateY(40px);
-  will-change: opacity, transform;
-}
-
-.techstack__card.in-view {
-  animation: slideUpFade 700ms var(--transition-ease-out) forwards;
-}
-
-.techstack__card:nth-child(1).in-view { animation-delay: 0ms; }
-.techstack__card:nth-child(2).in-view { animation-delay: 120ms; }
-.techstack__card:nth-child(3).in-view { animation-delay: 240ms; }
-.techstack__card:nth-child(4).in-view { animation-delay: 360ms; }
-.techstack__card:nth-child(5).in-view { animation-delay: 480ms; }
-
 @media (max-width: 768px) {
   .techstack__grid {
     grid-template-columns: 1fr;

@@ -3,22 +3,26 @@ import LogoLoop from './LogoLoop'
 import {
   SiReact, SiTypescript, SiJavascript, SiTailwindcss,
   SiHtml5, SiCss3, SiUnity, SiBlender,
-  SiNodedotjs, SiMysql, SiMongodb,
+  SiNodedotjs, SiMysql, SiMongodb, SiFirebase, SiFlutter, SiDart,
   SiDocker, SiGit, SiJenkins, SiApachetomcat, SiGithubactions, SiSpringboot
 } from 'react-icons/si'
 import { TbBrandCSharp } from 'react-icons/tb'
-import { HiCode, HiServer, HiDatabase, HiLink, HiCloudUpload } from 'react-icons/hi'
+import { HiCode, HiServer, HiLink, HiDeviceMobile } from 'react-icons/hi'
 
 const techLogos = [
   { node: <SiReact />, title: "React" },
   { node: <SiJavascript />, title: "JavaScript" },
   { node: <SiTypescript />, title: "TypeScript" },
+  { node: <SiFlutter />, title: "Flutter" },
+  { node: <SiDart />, title: "Dart" },
+  { node: <SiFirebase />, title: "Firebase" },
   { node: <SiTailwindcss />, title: "Tailwind CSS" },
   { node: <SiHtml5 />, title: "HTML5" },
   { node: <SiCss3 />, title: "CSS3" },
   { node: <SiUnity />, title: "Unity" },
   { node: <TbBrandCSharp />, title: "C#" },
   { node: <SiBlender />, title: "Blender" },
+  { node: <SiSpringboot />, title: "Spring Boot" },
   { node: <SiNodedotjs />, title: "Node.js" },
   { node: <HiLink />, title: "REST APIs" },
   { node: <SiMysql />, title: "MySQL" },
@@ -48,8 +52,8 @@ const TechStack = () => {
         />
       </div>
       <div className="techstack">
-        <h2 className="section-title techstack__title">Tech Stack</h2>
-        <p className="techstack__subtitle">Technologies I work with daily</p>
+        <h2 className="section-title techstack__title">Technical Stack</h2>
+        <p className="techstack__subtitle">Technologies and tools powering my development workflow</p>
 
         <div className="techstack__logoloop">
           <LogoLoop
@@ -70,43 +74,44 @@ const TechStack = () => {
           <div className="techstack__card">
             <div className="techstack__card-header">
               <div className="techstack__card-icon"><HiCode /></div>
-              <span className="techstack__card-label">Core Skills</span>
+              <span className="techstack__card-label">Primary</span>
             </div>
             <div className="techstack__items">
               <span className="techstack__item"><span className="techstack__item-icon"><SiReact /></span> React</span>
+              <span className="techstack__item"><span className="techstack__item-icon"><SiTypescript /></span> TypeScript</span>
               <span className="techstack__item"><span className="techstack__item-icon"><SiJavascript /></span> JavaScript</span>
               <span className="techstack__item"><span className="techstack__item-icon"><SiHtml5 /></span> HTML5</span>
               <span className="techstack__item"><span className="techstack__item-icon"><SiCss3 /></span> CSS3</span>
               <span className="techstack__item"><span className="techstack__item-icon"><SiTailwindcss /></span> Tailwind</span>
+              <span className="techstack__item"><span className="techstack__item-icon"><SiFirebase /></span> Firebase</span>
+            </div>
+          </div>
+
+          <div className="techstack__card">
+            <div className="techstack__card-header">
+              <div className="techstack__card-icon"><HiDeviceMobile /></div>
+              <span className="techstack__card-label">Mobile & 3D</span>
+            </div>
+            <div className="techstack__items">
+              <span className="techstack__item"><span className="techstack__item-icon"><SiFlutter /></span> Flutter</span>
+              <span className="techstack__item"><span className="techstack__item-icon"><SiDart /></span> Dart</span>
               <span className="techstack__item"><span className="techstack__item-icon"><SiUnity /></span> Unity</span>
-              <span className="techstack__item"><span className="techstack__item-icon"><SiGithubactions /></span> CI/CD</span>
-            </div>
-          </div>
-
-          <div className="techstack__card">
-            <div className="techstack__card-header">
-              <div className="techstack__card-icon"><HiLink /></div>
-              <span className="techstack__card-label">Familiar With</span>
-            </div>
-            <div className="techstack__items">
-              <span className="techstack__item"><span className="techstack__item-icon"><HiServer /></span> REST APIs</span>
-              <span className="techstack__item"><span className="techstack__item-icon"><HiDatabase /></span> MySQL</span>
-              <span className="techstack__item"><span className="techstack__item-icon"><SiNodedotjs /></span> Node.js</span>
-              <span className="techstack__item"><span className="techstack__item-icon"><HiCode /></span> C#</span>
+              <span className="techstack__item"><span className="techstack__item-icon"><TbBrandCSharp /></span> C#</span>
               <span className="techstack__item"><span className="techstack__item-icon"><SiBlender /></span> Blender</span>
-              <span className="techstack__item"><span className="techstack__item-icon"><SiGit /></span> Git</span>
             </div>
           </div>
 
           <div className="techstack__card">
             <div className="techstack__card-header">
-              <div className="techstack__card-icon"><HiCloudUpload /></div>
-              <span className="techstack__card-label">Learning</span>
+              <div className="techstack__card-icon"><HiServer /></div>
+              <span className="techstack__card-label">Backend & DevOps</span>
             </div>
             <div className="techstack__items">
-              <span className="techstack__item"><span className="techstack__item-icon"><HiDatabase /></span> DSA</span>
-              <span className="techstack__item"><span className="techstack__item-icon"><HiServer /></span> System Design</span>
               <span className="techstack__item"><span className="techstack__item-icon"><SiSpringboot /></span> Spring Boot</span>
+              <span className="techstack__item"><span className="techstack__item-icon"><HiLink /></span> REST APIs</span>
+              <span className="techstack__item"><span className="techstack__item-icon"><SiMysql /></span> MySQL</span>
+              <span className="techstack__item"><span className="techstack__item-icon"><SiNodedotjs /></span> Node.js</span>
+              <span className="techstack__item"><span className="techstack__item-icon"><SiGit /></span> Git</span>
               <span className="techstack__item"><span className="techstack__item-icon"><SiDocker /></span> Docker</span>
             </div>
           </div>

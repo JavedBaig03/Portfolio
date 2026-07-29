@@ -1,0 +1,130 @@
+/* ===== 3D GALLERY — DARK IMMERSIVE SECTION ===== */
+
+.gallery-wrapper {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  background: linear-gradient(
+    180deg,
+    #0a0a12 0%,
+    #0f1020 30%,
+    #111827 70%,
+    #0a0a12 100%
+  );
+  padding: clamp(5rem, 10vw, 8rem) 0;
+}
+
+/* Top edge blend — smooth transition from light to dark */
+.gallery-wrapper::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: 0;
+  right: 0;
+  height: 120px;
+  background: linear-gradient(
+    to bottom,
+    var(--color-bg-primary),
+    transparent
+  );
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Bottom edge blend — smooth transition from dark back to light */
+.gallery-wrapper::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  right: 0;
+  height: 120px;
+  background: linear-gradient(
+    to top,
+    var(--color-bg-primary),
+    transparent
+  );
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Vignette overlay for depth */
+.gallery__vignette {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at center, transparent 50%, rgba(0, 0, 0, 0.4) 100%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Subtle starfield/particle dots */
+.gallery-wrapper .gallery__stars {
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(1px 1px at 10% 20%, rgba(255, 255, 255, 0.15), transparent),
+    radial-gradient(1px 1px at 30% 65%, rgba(255, 255, 255, 0.1), transparent),
+    radial-gradient(1px 1px at 55% 15%, rgba(255, 255, 255, 0.12), transparent),
+    radial-gradient(1px 1px at 70% 45%, rgba(255, 255, 255, 0.08), transparent),
+    radial-gradient(1px 1px at 85% 75%, rgba(255, 255, 255, 0.1), transparent),
+    radial-gradient(1.5px 1.5px at 20% 80%, rgba(255, 255, 255, 0.08), transparent),
+    radial-gradient(1px 1px at 45% 40%, rgba(255, 255, 255, 0.12), transparent),
+    radial-gradient(1px 1px at 90% 10%, rgba(255, 255, 255, 0.1), transparent),
+    radial-gradient(1.5px 1.5px at 65% 90%, rgba(255, 255, 255, 0.06), transparent),
+    radial-gradient(1px 1px at 5% 50%, rgba(255, 255, 255, 0.1), transparent);
+  pointer-events: none;
+  z-index: 0;
+  animation: gallery-stars-twinkle 6s ease-in-out infinite alternate;
+}
+
+@keyframes gallery-stars-twinkle {
+  0% { opacity: 0.6; }
+  50% { opacity: 1; }
+  100% { opacity: 0.7; }
+}
+
+/* Content above backgrounds */
+.gallery-wrapper > .container {
+  position: relative;
+  z-index: 2;
+}
+
+/* Override text colors for dark context */
+.gallery-wrapper .gallery__title {
+  color: #f1f5f9;
+}
+
+.gallery-wrapper .gallery__subtitle {
+  color: rgba(203, 213, 225, 0.7);
+}
+
+/* Masonry items — adjusted shadows for dark context */
+.gallery-wrapper .item-wrapper > .item-img {
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.gallery-wrapper .item-wrapper:hover > .item-img {
+  box-shadow: 0 16px 50px rgba(0, 0, 0, 0.6);
+  border-color: rgba(255, 255, 255, 0.12);
+}
+
+/* Caption overlay for dark context */
+.gallery-wrapper .caption-overlay {
+  background: rgba(10, 10, 18, 0.85);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  color: #f1f5f9;
+}
+
+@media (max-width: 768px) {
+  .gallery-wrapper {
+    padding: 4rem 0;
+  }
+
+  .gallery-wrapper::before,
+  .gallery-wrapper::after {
+    height: 80px;
+  }
+}

@@ -11,7 +11,6 @@ html, body, #root {
 
 html {
   scroll-behavior: smooth;
-  scroll-snap-type: y proximity;
 }
 
 body {
@@ -72,13 +71,11 @@ section {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  scroll-snap-align: start;
 }
 
 /* Last section (contact) should not force min-height so footer stays visible */
 section:last-child {
   min-height: auto;
-  scroll-snap-align: none;
 }
 
 /* Sections that slide over the sticky hero */
@@ -91,15 +88,14 @@ section:last-child {
   box-shadow: 0 -20px 60px rgba(0, 0, 0, 0.5);
   margin-top: -24px;
 }
-.main-sections {
-  scroll-snap-type: y proximity;
-  overflow-y: auto;
-  height: 100vh;
-}
 
-/* The hero-wrapper itself is a snap target */
-.hero-wrapper {
-  scroll-snap-align: start;
+/* Sections that contain full-bleed wrapper backgrounds handle their own padding */
+#experience,
+#achievements,
+#work,
+#gallery {
+  padding: 0;
+  min-height: auto;
 }
 
 @media (max-width: 768px) {
@@ -235,5 +231,31 @@ section:last-child {
 @media (max-width: 768px) {
   .work-preview__grid {
     grid-template-columns: 1fr;
+  }
+}
+
+/* ===== SCROLL REVEAL ANIMATION ===== */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Sections entrance — modern scroll-driven animation */
+.sections-overlay > section {
+  animation: fadeInUp ease-out both;
+  animation-timeline: view();
+  animation-range: entry 0% entry 25%;
+}
+
+/* Fallback for browsers without scroll-driven animations */
+@supports not (animation-timeline: view()) {
+  .sections-overlay > section {
+    animation: none;
   }
 }
