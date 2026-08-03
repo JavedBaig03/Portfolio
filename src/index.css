@@ -116,10 +116,11 @@ ul {
 }
 
 :root {
+  --color-text-pressure: oklch(0.648 0.035 265.083);
   --radius: 0.625rem;
   --background: oklch(1 0 0);
   --foreground: oklch(0.13 0.028 261.692);
-  --card: oklch(1 0 0);
+  --card: oklch(100% 0.00011 271.152 / 0.272);
   --card-foreground: oklch(0.13 0.028 261.692);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.13 0.028 261.692);
@@ -151,6 +152,7 @@ ul {
 }
 
 .dark {
+  --color-text-pressure: rgba(255, 255, 255, 0.06);
   --background: oklch(0.13 0.028 261.692);
   --foreground: oklch(0.985 0.002 247.839);
   --card: oklch(0.21 0.034 264.665);

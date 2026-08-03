@@ -1,6 +1,22 @@
+import TextPressure from './TextPressure';
+
 const Hero = () => {
   return (
     <div className="hero">
+      <div className="hero__pressure-container" aria-hidden="true">
+        <TextPressure
+          text="Javed Baig"
+          flex={true}
+          alpha={true}
+          stroke={false}
+          width={true}
+          weight={true}
+          italic={true}
+          textColor="var(--color-text-pressure)"
+          strokeColor="#0013ff"
+          minFontSize={48}
+        />
+      </div>
       <div className="container">
         <div className="hero__content hero__content--spaced">
           <h3 className='hero__greetings'>Full-Stack Developer · React · Flutter · Spring Boot · Firebase</h3>
